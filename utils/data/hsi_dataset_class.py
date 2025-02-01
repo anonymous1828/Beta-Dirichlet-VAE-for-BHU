@@ -76,9 +76,6 @@ class HSIDataset(Dataset):
                                       M,
                                       A,
                                       dataset_name)
-        else:
-            warnings.warn("Cannot verify shapes for the provided dataset. \
-                                  Please make sure of the sanity check by yourself.")
         
         self.M = M
         self.A = A
