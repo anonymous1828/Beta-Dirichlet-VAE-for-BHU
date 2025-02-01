@@ -112,7 +112,7 @@ _ = parser.add_argument("--reg_loss",
                             Available losses: KLDiv, SinkhornDivergenceLoss")
 _ = parser.add_argument("--reg_factor",      
                         type=float, 
-                        required=False, 
+                        required=True, 
                         default=1e-1,
                         help="Regularization factor for regularization loss on abundance.")
 
@@ -344,6 +344,6 @@ def main():
                    save=True,
                    )
     
-    
+
 if __name__ == "__main__":
     main()

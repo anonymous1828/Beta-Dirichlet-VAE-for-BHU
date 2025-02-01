@@ -10,7 +10,7 @@ from model.extractors import NFINDR
 
 
 class DirVAE(BaseVAE):
-    """
+    r"""
         Dirichlet VAE based on "Dirichlet Variational Autoencoder"
         by Weonyoung Joo, Wonsung Lee, Sungrae Park & Il-Chul Moon
 
@@ -86,7 +86,7 @@ class DirVAE(BaseVAE):
 
 
     def process_latent(self, alphas: torch.Tensor, eps=1e-6) -> torch.Tensor:
-        """
+        r"""
             Input
             - alpha: params of the dircihlet distrib
 
@@ -100,7 +100,7 @@ class DirVAE(BaseVAE):
 
 
     def reparameterize(self, alphas: torch.Tensor) -> torch.Tensor:
-        """
+        r"""
             - u \sim U(0,1)
             - v \sim multigamma(\alpha, \beta \mathbb{1}_K)
 
