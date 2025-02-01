@@ -330,16 +330,20 @@ def main():
     path_to_log_dir = create_log_folder("./logs")
     
     log_metrics(avg_sad, sad_by_ems, avg_mse, mse_by_ems, path_to_log_dir)
-    log_figure(Y,
-           pred_M,
-           dataset.M,
-           init_M,
-           path_to_log_dir,
-           debug=True,
-           show=True,
-           verbose=False,
-           save=True,
-           )
+    
+    # plot the simplex only for synthetic data
+    if data_spec["dataset_name"] != "Samson" and not "Urban" in  data_spec["dataset_name"]:
+        log_figure(Y,
+                   pred_M,
+                   dataset.M,
+                   init_M,
+                   path_to_log_dir,
+                   debug=True,
+                   show=True,
+                   verbose=False,
+                   save=True,
+                   )
+    
     
 if __name__ == "__main__":
     main()

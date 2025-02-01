@@ -13,7 +13,7 @@ This repository contains code, data, and supplementary materials for the paper:
 
 We recommend using a `conda` virtual Python environment for installation.
 ```
-conda create --name bhuenv python=3.
+conda create --name bhuenv python=3.12.0
 ```
 
 Activate the new `conda` environment to install the Python packages.
@@ -29,22 +29,25 @@ git clone https://github.com/anonymous1828/Beta-Dirichlet-VAE-for-BHU.git
 
 Change directory and install the required Python packages.
 ```
-pip install -r requirements.txt
+cd Beta-Dirichlet-VAE-for-BHU && pip install -r requirements.txt
 ```
 
 ### Download the datasets
 ### Download Datasets
 
-For this submission, we worked with a generated a Synthetic dataset with various SNR, and 2 real datasets Samson and Urban datasets. Samson is already available in the ```Datasets``` directory.
-Urban is too heavy to be stored on Github. To obtain it follow those steps
+For this submission, we worked with a generated a Synthetic dataset with various SNR, and 2 real datasets Samson and Urban datasets. The synthetic dataset and Samson is already available in the ```Datasets``` directory.   
+Urban is too heavy to be stored on Github, so when running the model for the first time on it, it should download and unzip automatically.   
+If it doesn't work because of a broken link, you'll need to follow those steps to obtain it.
 1) download the dataset 
    - observations https://rslab.ut.ac.ir/documents/437291/1493656/Urban_R162.mat/24b3640f-ea17-a8cc-6e09-9b2ff22bf8c3?t=1710110006859&download=true
    - 4 endmembers ground truth : https://rslab.ut.ac.ir/documents/437291/1493656/groundTruth_4_end.zip/c03d6f3a-cb26-865d-6d4b-04c4480bdc57?t=1710109903885&download=true
    - 5 endmembers ground truth : https://rslab.ut.ac.ir/documents/437291/1493656/groundTruth_Urban_end5.zip/fe72c2db-d724-b848-92f7-c5fb0d6d1e79?t=1710109956268&download=true
    - 6 endmembers : https://rslab.ut.ac.ir/documents/437291/1493656/groundTruth_Urban_end6.zip/4ae2518a-298b-bdd2-0e28-8ee60c8e3ef1?t=1710109871882&download=true
-   If the link are broken, you can download them directly from the Remote Sensing lab of University of Teheran https://rslab.ut.ac.ir/data (section (9) Urban)
-2) Create a directory in ./data/ named Urban*k* where *k* is the number of endmembers (Urban4 for instance) and place the Urban_R162.mat and the groundTruth_Urban_end*k*.zip (for Urban4, your directory must contain Urban_R162.mat and groundTruth_Urban_end4.zip). 
+   If the provided links are also broken, you can download them directly from the website of the Remote Sensing lab of University of Teheran https://rslab.ut.ac.ir/data (in section (9) Urban). You'll have to download the matlab file Urban_R162.mat.
+2) Create a directory in ./Datasets/ named Urban**k** where **k** is the number of endmembers (Urban4 for instance) and place the Urban_R162.mat and the groundTruth_Urban_end**k**.zip (for Urban4, your directory must contain Urban_R162.mat and groundTruth_Urban_end4.zip). 
 3) The files will be automatically unzip at the first run.
+
+Finally, if the automatic download interrupt when running the program with Urban for the first, you'll have to manually delete the file called Urban**k**, to try again.
 
 
 ### Running the code
